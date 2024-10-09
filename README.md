@@ -26,8 +26,10 @@
 
 {Make a list of websites that you found helpful in this project}
 
-- [Web Site Name](http://url.link.goes.here)
-- [Web Site Name](http://url.link.goes.here)
+- [sqlite.org](https://www.sqlite.org/index.html)
+- [w3schools.com - SQL tutorial](https://www.w3schools.com/sql/default.asp)
+- [w3schools.com - Python tutorial](https://www.w3schools.com/python/default.asp)
+- [website name](link)
 
 # Future Work
 
