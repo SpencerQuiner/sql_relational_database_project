@@ -1,5 +1,8 @@
 import sqlite3
 
+#I removed two tables from the data base because I decided not to include tables to include the genre of the books in the database.
+#If I were adding more functions like the ability to search for books but it isn't needed at this time.
+
 def setup_database():
 
 #connect to or create the database
@@ -8,7 +11,8 @@ def setup_database():
 #setting up the cursor that makes it possible to interact with the database.
     cursor = connection.cursor()
 
-#use cursor.execute function to create each of the tables in the database. This database has 6 tables
+#use cursor.execute function to create each of the tables in the database. This database has 4 tables
+#books table stores information on the books in the library and a foreign key linking to the author.
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS books(
         book_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -18,28 +22,15 @@ def setup_database():
         author_id INTEGER,
         FOREIGN KEY(author_id) REFERENCES authors(author_id))
         ''')
-
+#This table stores the names of the authors separated from books because and author can write more than one book.
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS authors(
         author_id INTEGER PRIMARY KEY AUTOINCREMENT,
         fname VARCHAR(100) NOT NULL,
         lname VARCHAR(100) NOT NULL)
         ''')
-
-    cursor.execute('''
-    CREATE TABLE IF NOT EXISTS genre(
-        genre_id INTEGER PRIMARY KEY AUTOINCREMENT,
-        genre_name VARCHAR(100) NOT NULL)
-        ''')
-
-    cursor.execute('''
-    CREATE TABLE IF NOT EXISTS book_genre(
-        book_id INTEGER,
-        genre_id INTEGER,
-        FOREIGN KEY(book_id) REFERENCES books(book_id),
-        FOREIGN KEY(genre_id) REFERENCES genre(genre_id))
-        ''')
-
+    
+#This table stores the information on library users
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS library_users(
         user_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -47,7 +38,7 @@ def setup_database():
         user_lname VARCHAR(45) NOT NULL)
         ''')
 
-#This table stores a record of everytime a book is borrowed and who borrowed it. 
+#This table stores a record of everytime a book is borrowed and who borrowed it. foreign keys linking the library user and the book together. 
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS borrow_record(
         user_id INTEGER,

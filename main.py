@@ -12,7 +12,7 @@ def main():
         print('3. Add new library User.\n')
         print('4. Checkout book.\n')
         print('5. Return book.\n')
-        print('6. View list of checked out books.\n')
+        print('6. Reports.\n')
         print('7. Exit program.')
 
         selection = input('what would you like to do? ')
@@ -35,7 +35,7 @@ def main():
         elif selection == 5:
             databasefunctions.return_book()
         elif selection == 6:
-            databasefunctions.view_borrow_books()
+            databasefunctions.reports()
         elif selection == 7:
             print('Program exiting . . .')
             break
