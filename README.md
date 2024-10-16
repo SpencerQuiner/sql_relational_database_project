@@ -6,7 +6,6 @@ I created a relational database for a library. it is setup to enable a user to a
 
 My purpose in writing this software was to gain experiance in creating something like this that connects relational databases and code. I like books, and I like Libraries. My program is extremely simple but it let me see how involved a simple thing like keeping track of books can be and how much effort goes into creating systems todo that job. 
 
-{Provide a link to your YouTube demonstration. It should be a 4-5 minute demo of the software running, a walkthrough of the code, and a view of how created the Relational Database.}
 
 [Software Demo Video](https://www.youtube.com/watch?v=z_KBHuTsryE)
 
@@ -32,8 +31,6 @@ This program is written in Python.
 - [sqlite tutorial](https://www.sqlitetutorial.net/)
 
 # Future Work
-
-{Make a list of things that you need to fix, improve, and add in the future.}
 
 - a GUI would make using this program much easier
 - I need to build in more error handeling
